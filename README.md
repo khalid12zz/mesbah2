@@ -37,11 +37,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## The Project's Stack
 
-- ![mdx](https://mdxjs.com/)
-- ![next.js](https://nextjs.org/)
-- ![tailwind.css](https://tailwindcss.com/)
-- ![rough notation](https://roughnotation.com/)
-- ![1]()
+- [mdx](https://mdxjs.com/)
+- [next.js](https://nextjs.org/)
+- [tailwind.css](https://tailwindcss.com/)
+- [rough notation](https://roughnotation.com/)
+- [1]()
 
 ### Component Libraries
 
