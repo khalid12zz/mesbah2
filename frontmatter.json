@@ -1,0 +1,102 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Type",
+          "name": "type",
+          "type": "tags"
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Last modification time",
+          "name": "lastmod",
+          "type": "datetime"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "next",
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.preview.host": "http://localhost:3000/posts",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "articles",
+      "path": "[[workspace]]/articles"
+    }
+  ],
+  "frontMatter.taxonomy.type": [
+    "algorithm",
+    "data structure",
+    "problem solving",
+    "course",
+    "article",
+    "video",
+    "tips & tricks",
+    "snippet",
+    "tutorial",
+    "question",
+    "tweet",
+    "book"
+  ],
+  "frontMatter.taxonomy.tags": [
+    "CSS",
+    "HTML",
+    "Node",
+    "TypeScript",
+    "JavaScript",
+    "React.js",
+    "Next.js",
+    "Linux",
+    "Arch",
+    "NPM",
+    "Tmux",
+    "Vim",
+    "NeoVim",
+    "VSCode",
+    "English",
+    "Software-Engineering",
+    "Computer-Science",
+    "Fundamentals",
+    "MD",
+    "MDX",
+    "AI",
+    "Prettier",
+    "EsLint",
+    "JSX",
+    "TSX",
+    "Unit-Testing",
+    "Integration-Testing",
+    "End-To-End-Testing",
+    "Testing",
+    "Open-Source",
+    "Career",
+    "Front-End",
+    "Back-End",
+    "Programming",
+    "Coding"
+  ]
+}

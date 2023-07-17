@@ -1,0 +1,42 @@
+/* {
+  "frontMatter.framework.id": "next",
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.preview.host": "http://localhost:3000/posts/writingFramework",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "articles",
+      "path": "[[workspace]]/articles"
+    }
+  ],
+  "frontMatter.taxonomy.tags": [
+    "CSS",
+    "HTML",
+    "Node",
+    "TypeScript",
+    "JavaScript",
+    "React",
+    "Next",
+    "Linux",
+    "Arch",
+    "NPM",
+    "Tmux",
+    "Vim",
+    "NeoVim",
+    "VSCode",
+    "English",
+    ""
+  ],
+  "frontMatter.taxonomy.category": [
+    "Article",
+    "Video",
+    "Tutorial",
+    "Snippet",
+    "Problem Solving",
+    "Data Structure",
+    "Algorithm",
+    "Podcast",
+    "Question",
+    "Course"
+  ]
+}
+ */
