@@ -1,29 +1,100 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
+  darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
   theme: {
-    colors: {
-      clr50: "rgb(var(--clr50) / <alpha-value>)",
-      clr100: "rgb(var(--clr100) / <alpha-value>)",
-      clr200: "rgb(var(--clr200) / <alpha-value>)",
-      clr300: "rgb(var(--clr300) / <alpha-value>)",
-      clr400: "rgb(var(--clr400) / <alpha-value>)",
-      clr500: "rgb(var(--clr500) / <alpha-value>)",
-      clr600: "rgb(var(--clr600) / <alpha-value>)",
-      clr700: "rgb(var(--clr700) / <alpha-value>)",
-      clr800: "rgb(var(--clr800) / <alpha-value>)",
-      clr900: "rgb(var(--clr900) / <alpha-value>)",
-      clr1000: "rgb(var(--clr1000) / <alpha-value>)",
-      clr1100: "rgb(var(--clr1100) / <alpha-value>)",
-      clr1200: "rgb(var(--clr1200) / <alpha-value>)",
-      clr1300: "rgb(var(--clr1300) / <alpha-value>)",
-      clr1400: "rgb(var(--clr1400) / <alpha-value>)",
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      screens: {
+        "xs": "280px"
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)"]
+      },
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
     },
   },
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography"),
+  plugin(function({ addVariant, e, postcss }) { // for navbar trasparensy support in firefox
+    addVariant('firefox', ({ container, separator }) => {
+      const isFirefoxRule = postcss.atRule({
+        name: '-moz-document',
+        params: 'url-prefix()',
+      });
+      isFirefoxRule.append(container.nodes);
+      container.append(isFirefoxRule);
+      isFirefoxRule.walkRules((rule) => {
+        rule.selector = `.${e(
+          `firefox${separator}${rule.selector.slice(1)}`
+        )}`;
+      });
+    });
+  })
+  ],
 }

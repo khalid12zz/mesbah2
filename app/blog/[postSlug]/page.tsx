@@ -29,7 +29,7 @@ export default async function Post({
   const estimatedTime = (contentHtml.split(" ").length / 200 + 1).toFixed()
 
   return (
-    <main className="py-5 prose prose-2xl mx-auto">
+    <main className="py-5 prose prose-2xl mx-auto prose-code:font-sans">
       <header>
         <p className="text-base flex gap-2 items-center text-clr800">
           <span className="badge bg-clr900 text-clr100  badge-lg font-bold uppercase text-base">

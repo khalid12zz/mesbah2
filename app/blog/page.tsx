@@ -1,5 +1,5 @@
 import { getSortedPostsData } from "@/lib/posts"
-import Post from "../components/ListItem"
+import Post from "@/components/ListItem"
 
 export default function Posts() {
   const posts = getSortedPostsData()
@@ -26,8 +26,6 @@ export default function Posts() {
       </div>
       <h1>filter by</h1>
       <div className="flex gap-2">
-        <button className="btn btn-neutral">type</button>
-        <button className="btn btn-neutral">category</button>
       </div>
       <div className="flex flex-col gap-3 p-4">
         {posts.map((post) => (
