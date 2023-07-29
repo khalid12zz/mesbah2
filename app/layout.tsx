@@ -5,7 +5,7 @@ import "./globals.css"
 import Providers from "@/components/providers"
 import Footer from "@/components/Footer"
 
-const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-inter" })
+const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-inter" ,  display: 'swap', adjustFontFallback: false})
 
 export const metadata: Metadata = {
   title: "sebaq Blog",

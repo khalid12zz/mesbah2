@@ -1,9 +1,10 @@
 /**
  * @type {import('next').NextConfig}
  */
+
 const nextConfig = {
-  rules: [
-    {
+ webpack: (config) => {
+    config.module.rules.push({
       test: /\.mdx?$/,
       use: [
         {
@@ -12,8 +13,10 @@ const nextConfig = {
           options: {},
         },
       ],
-    },
-  ],
+    },)
+ 
+    return config
+  },
 }
 
 module.exports = nextConfig
