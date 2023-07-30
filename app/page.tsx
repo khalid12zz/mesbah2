@@ -1,6 +1,9 @@
-export default function Home() {
+export default async function Home() {
+  const delay = (s: number) => new Promise(resolve => setTimeout(resolve, s))
+  await delay(5000)
+
   return (
-    <main className="px-6 mx-auto flex-1">
+    <main className="flex-1">
       hi my name is khalid
     </main>
   )

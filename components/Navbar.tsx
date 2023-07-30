@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Popover,
   PopoverContent,
@@ -8,6 +10,8 @@ import { HiOutlineMenuAlt2 } from "react-icons/hi"
 import Settings from "@/components/Settings"
 import { BsTerminalFill } from "react-icons/bs"
 import { Button } from "@/components/ui/button"
+import { usePathname } from 'next/navigation'
+import { useEffect } from "react"
 
 export default function Navbar() {
   return (
@@ -29,24 +33,27 @@ export default function Navbar() {
   )
 }
 
-const Li = ({ page }: { page: string }) => {
+const Li = ({ href, name }: { href: string, name: string }) => {
+  const pathname = usePathname()
+  const isActive = (href === "/" && href === pathname) || (href !== "/" && pathname.startsWith(href))
+
   return (
-    <Button variant={"link"} className="justify-start">
-      <Link href={`/${page === "home" ? "" : page}`} className="flex gap-1 items-center capitalize font-bold">
+    <li className="active">
+      <Link href={href} className={`flex gap-1 items-center capitalize py-2 px-4 rounded-md font-bold ${isActive ? "text-black-950" : "text-gray-500"} hover:text-gray-900 transition-colors duration-500`}>
         <BsTerminalFill />
-        {page}
+        {name}
       </Link>
-    </Button>
+    </li>
   )
 }
 
 const Menu = ({ className }: { className?: string }) => {
   return (
-    <menu className={`${className} font-md`}>
-      <Li page={"home"} />
-      <Li page={"blog"} />
-      <Li page={"project"} />
-      <Li page={"uses"} />
+    <menu className={`${className} font-md gap-1`}>
+      <Li href={"/"} name={"home"} />
+      <Li href={"/blog"} name={"blog"} />
+      <Li href={"/projects"} name={"projects"} />
+      <Li href={"/uses"} name={"uses"} />
     </menu>
   )
 }

@@ -5,7 +5,7 @@ import "./globals.css"
 import Providers from "@/components/providers"
 import Footer from "@/components/Footer"
 
-const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-inter" ,  display: 'swap', adjustFontFallback: false})
+const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-inter", display: 'swap', adjustFontFallback: false })
 
 export const metadata: Metadata = {
   title: "sebaq Blog",
@@ -24,7 +24,7 @@ export default function RootLayout({
       >
         <Providers>
           <Navbar />
-          <div className="container">{children}</div>
+          <div className="container min-h-screen flex flex-col">{children}</div>
           <Footer />
         </Providers>
       </body>

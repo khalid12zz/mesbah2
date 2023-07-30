@@ -8,7 +8,7 @@ import { MdSettings } from "react-icons/md"
 export default function Settings() {
   return (
     <Popover>
-      <PopoverTrigger><MdSettings className="text-2xl"/></PopoverTrigger>
+      <PopoverTrigger><MdSettings className="text-2xl hover:animate-spin" /></PopoverTrigger>
       <PopoverContent>Place content for the popover here.</PopoverContent>
     </Popover>
   )
