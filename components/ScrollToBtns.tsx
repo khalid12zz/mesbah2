@@ -12,7 +12,7 @@ export default function ScrollToBtns() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const [isTopBtnDisabled, setIsTopBtnDisabled] = useState(false)
-  const [isBottomBtnDisabled, setIsBottomBtnDisabled] = useState(true)
+  const [isBottomBtnDisabled, setIsBottomBtnDisabled] = useState(false)
 
   const scrollHandler = () => {
     setIsTopBtnDisabled(window.scrollY === 0)
@@ -20,6 +20,7 @@ export default function ScrollToBtns() {
   }
 
   useEffect(() => {
+    scrollHandler();
     window.addEventListener("scroll", scrollHandler)
     return () => window.removeEventListener("scroll", scrollHandler)
   }, [pathname, searchParams])

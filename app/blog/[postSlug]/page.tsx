@@ -8,7 +8,6 @@ export default async function Post({
 }: {
   params: { postSlug: string }
 }) {
-
   const posts = getSortedPostsData()
   let previousPost: BlogPost | undefined
   let nextPost: BlogPost | undefined
