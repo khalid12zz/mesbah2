@@ -9,9 +9,6 @@ export default async function Post({
   params: { postSlug: string }
 }) {
 
-  const delay = (s: number) => new Promise(resolve => setTimeout(resolve, s))
-  await delay(5000)
-
   const posts = getSortedPostsData()
   let previousPost: BlogPost | undefined
   let nextPost: BlogPost | undefined

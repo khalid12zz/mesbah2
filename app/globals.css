@@ -1,7 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
+ html {
+  scrollbar-color: #6969dd #e0e0e0;
+  scrollbar-width: thin;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
