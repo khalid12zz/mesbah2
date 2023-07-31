@@ -97,3 +97,12 @@ html::-webkit-scrollbar-track{
 	border-radius: 10px;
 	background-color: #F5F5F5; 
 }
+
+/* Misc */
+
+/* Animations */
+@keyframes animateLogo {
+  to {
+    background-position: 0 30em;
+  }
+}

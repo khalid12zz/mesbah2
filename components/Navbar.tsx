@@ -9,9 +9,8 @@ import Link from "next/link"
 import { HiOutlineMenuAlt2 } from "react-icons/hi"
 import Settings from "@/components/Settings"
 import { BsTerminalFill } from "react-icons/bs"
-import { Button } from "@/components/ui/button"
+import Logo from "@/components/Logo"
 import { usePathname } from 'next/navigation'
-import { useEffect } from "react"
 
 export default function Navbar() {
   return (
@@ -25,7 +24,7 @@ export default function Navbar() {
             </PopoverContent>
           </Popover>
         </div>
-        <Button className="text-2xl">K.Mesbah</Button>
+        <Logo />
         <Menu className="hidden sm:flex" />
         <Settings />
       </nav>
