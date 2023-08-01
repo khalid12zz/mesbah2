@@ -1,9 +1,11 @@
 import Type from "@/components/Type"
 
-export default function Types({ types }: { types: string[] }) {
+type variantType = "default" | "secondary" | "destructive" | "outline" | null | undefined
+
+export default function Types({ types, className, childrenClassName, onclick, variant }: { types: string[], className?: string, childrenClassName?: string, onclick?: () => void, variant?: variantType }) {
   return (
-    <div>
-      {types.map((type, index) => <Type key={type + index} type={type} />)}
+    <div className={className}>
+      {types.map((type, index) => <Type key={type + index} variant={variant} type={type} className={childrenClassName} onclick={onclick} />)}
     </div>
   )
 }

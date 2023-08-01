@@ -16,7 +16,7 @@ const ProgressBar = () => {
     }
   }, [])
 
-  return <Progress value={progress} className={"fixed top-0 left-0 w-full h-1"} />
+  return <Progress value={progress} className="fixed top-0 left-0 w-full h-1 z-[2]" />
 }
 
 export default ProgressBar

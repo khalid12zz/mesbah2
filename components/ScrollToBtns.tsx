@@ -26,21 +26,21 @@ export default function ScrollToBtns() {
   }, [pathname, searchParams])
 
   return (
-    <div className="flex flex-col gap-1 fixed bottom-2 right-2">
+    <div className="flex flex-col gap-1 fixed bottom-2 right-2 z-[2]">
       <Button onClick={() => {
         window.scrollTo({
           left: 0,
           top: 0,
           behavior: "smooth"
         });
-      }} disabled={isTopBtnDisabled} className="" ref={toTopBtn}><ChevronUpIcon /></Button>
+      }} disabled={isTopBtnDisabled} ref={toTopBtn}><ChevronUpIcon /></Button>
       <Button onClick={() => {
         window.scrollTo({
           left: 0,
           top: window.document.documentElement.scrollHeight,
           behavior: "smooth"
         });
-      }} disabled={isBottomBtnDisabled} className="" ref={toButtonBtn}><ChevronDownIcon /></Button>
+      }} disabled={isBottomBtnDisabled} ref={toButtonBtn}><ChevronDownIcon /></Button>
     </div>
   )
 }

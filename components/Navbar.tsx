@@ -14,7 +14,7 @@ import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-1 bg-white backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200 firefox:bg-opacity-90">
+    <header className="sticky top-0 z-[1] bg-white backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200 firefox:bg-opacity-90">
       <nav className="container gap-2 flex justify-between items-center py-4">
         <div className="sm:hidden">
           <Popover>

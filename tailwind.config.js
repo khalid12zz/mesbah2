@@ -18,7 +18,12 @@ module.exports = {
       },
     },
     extend: {
+      fontSize: {
+        title: "clamp(2rem, 5vw, 3rem)",
+        description: "clamp(0.8rem, 2vw, 1.6rem)",
+      },
       screens: {
+        "smlr": "400px",
         "xs": "280px"
       },
       fontFamily: {

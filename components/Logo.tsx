@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
+
 export default function Logo() {
   return (
-    <Button className="text-2xl text-transparent font-extrabold uppercase shadow-black shadow-sm" style={{
+    <Link href={"/"} className="text-2xl text-transparent font-extrabold uppercase" style={{
       letterSpacing: "2px",
       backgroundImage: `linear-gradient(180deg,
       #c400ff 14.3%,
@@ -16,6 +18,6 @@ export default function Logo() {
       backgroundClip: "text",
       WebkitBackgroundClip: "text",
       WebkitTextStroke: "0.04em #0008"
-    }}>k.mesbah</Button >
+    }}>k.mesbah</Link >
   )
 }
