@@ -8,13 +8,12 @@ import {
 import Link from "next/link"
 import { HiOutlineMenuAlt2 } from "react-icons/hi"
 import Settings from "@/components/Settings"
-import { BsTerminalFill } from "react-icons/bs"
 import Logo from "@/components/Logo"
 import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-[1] bg-white backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200 firefox:bg-opacity-90">
+    <header className="sticky top-0 z-[1] backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200 firefox:bg-opacity-90">
       <nav className="container gap-2 flex justify-between items-center py-4">
         <div className="sm:hidden">
           <Popover>
@@ -38,9 +37,8 @@ const Li = ({ href, name }: { href: string, name: string }) => {
 
   return (
     <li className="active">
-      <Link href={href} className={`flex gap-1 items-center capitalize py-2 px-4 rounded-md font-bold ${isActive ? "text-black-950" : "text-gray-500"} hover:text-gray-900 transition-colors duration-500`}>
-        <BsTerminalFill />
-        {name}
+      <Link href={href} className={`flex gap-1 items-center capitalize py-2 px-4 rounded-md font-bold ${isActive ? "text-black-950" : "text-gray-500"} hover:text-foreground transition-colors duration-500`}>
+        ~/{name}
       </Link>
     </li>
   )

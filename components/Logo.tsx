@@ -3,6 +3,19 @@ import Link from "next/link"
 
 export default function Logo() {
   return (
+    <svg viewBox="0 0 200 40" width={140} height={40} className="logo">
+      <title>logo</title>
+      <text x="50%" y="50%" dy=".35em" textAnchor="middle" className="text-4xl font-extrabold uppercase tracking-wider">
+        K.Mesbah
+      </text>
+    </svg>
+  )
+}
+
+/*
+ *
+ * 
+  return (
     <Link href={"/"} className="text-2xl text-transparent font-extrabold uppercase" style={{
       letterSpacing: "2px",
       backgroundImage: `linear-gradient(180deg,
@@ -20,4 +33,6 @@ export default function Logo() {
       WebkitTextStroke: "0.04em #0008"
     }}>k.mesbah</Link >
   )
-}
+ *
+ *
+ */

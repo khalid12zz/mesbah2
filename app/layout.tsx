@@ -5,11 +5,11 @@ import "./globals.css"
 import Providers from "@/components/providers"
 import Footer from "@/components/Footer"
 
-const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-inter", display: 'swap', adjustFontFallback: false })
+const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetBrainsMono", display: 'swap', adjustFontFallback: false })
 
 export const metadata: Metadata = {
-  title: "sebaq Blog",
-  description: "Khalid's Blog",
+  title: "Khalid Mesbah",
+  description: "Khalid Mesbah's Personal Portfolio",
 }
 
 export default function RootLayout({
@@ -20,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${jetBrainsMono.variable} font-sans`}
+        className={`${jetBrainsMono.variable} font-jetBrainsMono`}
       >
         <Providers>
           <Navbar />
-          <div className="container min-h-screen flex flex-col py-12">{children}</div>
+          <div className="container min-h-screen">{children}</div>
           <Footer />
         </Providers>
       </body>

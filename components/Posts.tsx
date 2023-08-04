@@ -3,7 +3,6 @@
 import Post from "@/components/Post"
 import Tag from "@/components/Tag"
 import Type from "@/components/Type"
-import Types from "@/components/Types"
 import { useEffect, useState } from "react"
 
 interface FilterType {
@@ -61,8 +60,8 @@ export default function Posts({ posts }: { posts: BlogPost[] }) {
   }, [filter.selectedType, JSON.stringify(filter.selectedTags)])
 
   return (
-    <section className="flex gap-4 items-start p-4">
-      <div className="sticky top-[72px] bg-red-400 max-w-[400px] p-2 rounded-md">
+    <section className="flex gap-4 items-start p-4 flex-wrap">
+      <div className="md:sticky md:top-[72px] border-2 border-border md:max-w-[400px] p-2 rounded-md">
         <h1 className="text-xl">filter by type</h1>
         <div className="flex flex-wrap gap-2">
           {allTypes.map((type, index) =>

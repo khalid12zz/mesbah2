@@ -11,7 +11,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [1]()
 
 
-## Notes
+## Tasks
 
 - [ ] add website page
 - [ ] a bug killer slogan with the q:

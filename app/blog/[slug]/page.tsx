@@ -1,5 +1,4 @@
-import getFormattedDate from "@/lib/getFormattedDate"
-import { ChevronLeftIcon, ChevronRightIcon, RocketIcon } from "@radix-ui/react-icons"
+import { ChevronLeftIcon, ChevronRightIcon, DotsVerticalIcon, RocketIcon } from "@radix-ui/react-icons"
 import { Button } from "@/components/ui/button"
 import { getPostData, getSortedPostsData } from "@/lib/posts"
 import Link from "next/link"
@@ -13,11 +12,20 @@ import {
 } from "@/components/ui/tooltip"
 import { Separator } from "@/components/ui/separator"
 import Type from "@/components/Type"
-import Tag from "@/components/Tag"
 import Tags from "@/components/Tags"
 import { FaCalendarDay } from "react-icons/fa"
 import { BiSolidTimeFive } from "react-icons/bi"
-
+import Comment from "@/components/Comment"
+import HorizontalSeparator from "@/components/HorizontalSeparator"
+import VerticalSeparator from "@/components/VerticalSeparator"
+import emojis from "@/lib/emojis"
+import { FaHandsHelping } from "react-icons/fa"
+/*
+ * make the page scroll to top if the next or prev buttons are pressed
+ * add a share component
+ * the comments section disappears on refresh
+ *
+ */
 export default async function Post({
   params: { slug },
 }: {
@@ -40,22 +48,23 @@ export default async function Post({
 
   const { type, title, lastmod, description, tags, contentHtml } =
     await getPostData(slug)
-  const date = getFormattedDate(lastmod).toString()
   const estimatedTime = (contentHtml.split(" ").length / 200 + 1).toFixed()
+  const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)]
+
 
   return (
-    <main className="py-5 prose prose-md md:prose-lg lg:prose-xl prose-code:font-sans mx-auto prose-h1:first-of-type:text-title prose-h1:first-of-type:my-2 prose-p:first-of-type:text-description prose-p:first-of-type:m-0">
+    <main className="py-5 w-full prose prose-md md:prose-lg lg:prose-xl prose-code:font-jetBrainsMono mx-auto prose-h1:first-of-type:text-title prose-h1:first-of-type:my-2 prose-p:first-of-type:text-description prose-p:first-of-type:m-0 text-foreground dark:prose-invert prose-code:overflow-x-scroll">
       <header>
         <div className="flex gap-2 items-center flex-wrap">
           <Type type={type} className="font-bold uppercase text-base" />
-          <Separator orientation="vertical" className="min-h-[20px] bg-gray-900" />
+          <VerticalSeparator />
           <span className="flex gap-1 items-center"><BiSolidTimeFive /><span>{estimatedTime} min read</span></span>
-          <span className="flex gap-1 items-center ml-auto"><FaCalendarDay /><span>{date}</span></span>
+          <span className="flex gap-1 items-center ml-auto"><FaCalendarDay /><span>{lastmod}</span></span>
         </div>
-        <h1 className="!text-title font-extrabold capitalize">{title}</h1>
-        <p className="!text-description font-semibold">{description}</p>
+        <h1 className="font-extrabold capitalize">{`${randomEmoji} ${title}`}</h1>
+        <p className="font-semibold">{description}</p>
         <Tags tags={tags} variant={"destructive"} className="flex gap-2" childrenClassName="uppercase" />
-        <Separator className="my-4 bg-gray-900" />
+        <HorizontalSeparator />
       </header>
       <article>
         <section
@@ -64,7 +73,7 @@ export default async function Post({
         />
       </article>
       <Alert className="my-4 border-black">
-        <RocketIcon className="h-4 w-4 mt-1" />
+        <FaHandsHelping className="h-4 w-4 mt-[2px] text-md" />
         <AlertTitle className="font-bold text-lg capitalize">somthing wrong, misleading, or could be written better!</AlertTitle>
         <AlertDescription>
           <p className="!text-base mb-12">
@@ -72,6 +81,9 @@ export default async function Post({
           </p>
         </AlertDescription>
       </Alert>
+      <h2 className="bg-foreground text-background text-center py-2 rounded-md">Comments</h2>
+      <Comment />
+      <HorizontalSeparator />
       <footer className="flex gap-2 justify-center smlr:justify-between flex-wrap">
         <TooltipProvider>
           {previousPost ? (

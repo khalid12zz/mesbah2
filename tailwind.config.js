@@ -10,14 +10,13 @@ module.exports = {
     './src/**/*.{ts,tsx}',
   ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
+      container: {
+        center: true,
+        screens: {
+          "2xl": "1400px",
+        },
+      },
       fontSize: {
         title: "clamp(2rem, 5vw, 3rem)",
         description: "clamp(0.8rem, 2vw, 1.6rem)",
@@ -27,7 +26,7 @@ module.exports = {
         "xs": "280px"
       },
       fontFamily: {
-        sans: ["var(--font-inter)"]
+        jetBrainsMono: ["var(--font-jetBrainsMono)"]
       },
       colors: {
         border: "hsl(var(--border))",
